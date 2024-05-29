@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>간편회원가입</title>
+</head>
+<style>
+.box { width:150px; height:20px; border:1px solid black; display:inline-block;
+vertical-align: -5px; }
+</style>
+<body>
+<form id="f" method="post" action="./memberok.do" onsubmit="return postok()" enctype="application/x-www-form-urlencoded">
+<div class="box" id="no"></div> <!-- 인증번호 -->
+<input type="button" value="새로고침" onclick="refresh()"><br>
+<input type="text" id="key" maxlength="4" placeholder="보안코드 4자리"><br>
+<input type="text" name="mid" placeholder="아이디"><br>
+<input type="password" name="mpass" placeholder="패스워드"><br>
+<input type="submit" value="회원가입">
+</form>
+</body>
+<script>
+var number = "";	//보안코드 생성 변수
+
+function postok(){
+	
+	if(f.mid.value==""){
+		alert("아이디를 입력하세요!");
+		return false;
+	}
+	else if(f.mpass.value==""){
+		alert("패스워드를 입력하세요!");
+		return false;
+	}
+	else{
+		var userno = document.getElementById("key").value; //사용자가 입력한 보안키
+		if(number == userno){	//난수로 생성된 보안키, 사용자 입력한 보안키 데이터 전송
+			//f.submit();
+			//return true;
+			return;
+		}
+		else{
+			alert("정상적인 보안코드를 입력하세요");
+			return false;
+		}
+		
+	}
+	
+}
+
+
+//새로고침
+function refresh(){
+	number = "";		//전역변수 초기화
+	var se = document.getElementById("no");
+	//난수 4자리
+	var k;
+	for(k=1; k<=4; k++){
+			var keys = Math.ceil(Math.random()*9);
+			number += keys;
+	}
+	//se.innerHTML = number;
+
+	se.innerHTML = "";
+	se.append(number);
+}
+refresh();
+</script>
+</html>

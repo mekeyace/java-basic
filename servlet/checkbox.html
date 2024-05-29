@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>checkbox 및 radio 핸들링 - 데이터 전송</title>
+</head>
+<body>
+<form id="f" method="post" action="./agree.do" enctype="application/x-www-form-urlencoded">
+자동 로그인 : <input type="checkbox" name="ck" value="Y"><br>
+약관 정책 : <input type="radio" name="ag" value="agree_Y">동의함 
+<input type="radio" name="ag" checked>동의안함<br>
+<input type="button" value="전송" onclick="gopage()">
+</form>
+</body>
+<script>
+function gopage(){
+	f.submit();	
+}
+</script>
+</html>

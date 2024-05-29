@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아이디 중복체크 - 프로세서</title>
+</head>
+<body>
+<form id="f" method="post" action="./idcheck.do">
+아이디 : <input type="text" name="mid">
+<button type="button" onclick="idcheck()">아이디 중복체크</button>
+</form>
+</body>
+<script>
+function idcheck(){
+	f.submit();
+	/*
+	if(f.mid.value==""){
+		alert("아이디를 입력하세요");
+		f.mid.focus();
+	}
+	else{
+		f.submit();
+	}
+	*/
+}
+</script>
+</html>

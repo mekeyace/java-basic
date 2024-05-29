@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>검색에 따른 get 전송방식 2가지</title>
+</head>
+<body>
+<!-- 
+<form id="f" method="get" action="./searchok.do" onsubmit="return search_ck()">
+<input type="hidden" name="key" value="123456789">
+검색어를 입력하세요 : <input type="text" name="search">
+<input type="submit" value="검색">
+</form>
+ -->
+검색어를 입력하세요 : <input type="text" id="s">
+<input type="button" value="검색" onclick="datapost()">
+
+</body>
+<script>
+//form 전송 없이 location.href를 이용하여 파라미터명 과 데이터 값을 이용하여 전송
+function datapost(){
+	var w = document.getElementById("s").value;
+	location.href="./searchok.do?search="+ w +"&key=12345";
+}
+
+//form에 method에 get 입력 후 전송하는 방식 
+function search_ck(){
+		if(f.search.value==""){
+			alert("검색어를 입력해 주세요");
+			return false;
+		}
+		else{
+			f.submit();
+		}
+}
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML 태그별 데이터 전송</title>
+</head>
+<body>
+<form id="f" method="post" action="./htmlcodeok.do" enctype="application/x-www-form-urlencoded">
+통신사 : <select name="corp">
+<option value="">통신사를 선택하세요</option>
+<option value="SKT">SKT</option>
+<option value="KT">KT</option>
+<option value="LGT">LGT</option>
+<option value="알뜰폰">알뜰폰</option>
+</select>
+<br><br>
+예약일자 및 시간: <input type="datetime-local" name="today">
+<br><br>
+색상선택 : <input type="color" name="color">
+<br><br>
+<input type="button" value="전송" onclick="gopage()">
+</form>
+</body>
+<script>
+function gopage(){
+	f.submit();
+}
+</script>
+</html>

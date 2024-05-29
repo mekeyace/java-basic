@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이메일 인증확인 페이지</title>
+</head>
+<script>
+function check(){
+	if(f.email1.value=="" || f.email2.value==""){
+		alert("이메일 주소를 입력해 주세요");
+	}
+	else{
+		f.email.value = f.email1.value +"@"+ f.email2.value;
+		f.submit();
+		//console.log(f.email.value);
+	}
+} 
+</script>
+<body>
+
+<form id="f" method="post" action="./emailok.do">
+<input type="hidden" name="email" value="">
+<input type="text" name="email1">@<input type="text" name="email2">
+<input type="button" value="인증확인" onclick="check()">
+</form>
+
+</body>
+</html>
